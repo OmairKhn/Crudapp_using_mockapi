@@ -6,7 +6,8 @@ const Read = () => {
  const [data,setData] = useState([]);
  const [tabledark,Settabledark] = useState('')
 
-function getData() {
+function getData(e) {
+    e.preventdefault();
     axios
     .get('https://65b7855946324d531d54d167.mockapi.io/crud-youtube')
     .then((res) => {
@@ -21,6 +22,7 @@ function getData() {
     })
  }
 const setlocalstorage = (id, name , email) => {
+   
     localStorage.setItem("id" , id);
     localStorage.setItem("name" , name);
     localStorage.setItem("email" , email);
